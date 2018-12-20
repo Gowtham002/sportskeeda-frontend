@@ -1,11 +1,11 @@
-const url = "https://s3-ap-southeast-1.amazonaws.com/takehomeproject/feed.json";
-const fetchOptions = {
+const URL = "https://s3-ap-southeast-1.amazonaws.com/takehomeproject/feed.json";
+const FETCH_OPTIONS = {
   method: "GET"
-}
-const MAX_ELEMENTS = 3;
-const GRID_CLASSES = ["col-1", "col-1", "col-2"]
+};
 let reverse = false;
 let remainingSpace = 0;
+let loadIndex = 0;
+let articles = [];
 
 const drawContent = (data) => {
   if(data.data && data.data.rows) {
@@ -27,13 +27,18 @@ const drawContent = (data) => {
 const drawRow = (items, classList, rowEle = null) => {
   if(!rowEle) {
     var rowEle = createEle("div", ["row"]);
-    document.getElementById("main-container").appendChild(rowEle);
+    document.getElementById(CONTAINER_ID).appendChild(rowEle);
   }
   items.forEach((item, index) => {
     var gridEle = createEle("div", [classList[index]]);
-    gridEle.innerHTML = getCardEle(item.coverPic[0], item.title, item.detailUrl)
+    gridEle.innerHTML = getCardEle(item.coverPic[0], item.title, item.detailURL)
     rowEle.appendChild(gridEle);
   });
 }
 
-fetchData(url, fetchOptions, drawContent);
+const loadPartial = (data = {}) => {
+  articles = data && data.data && data.data.rows || articles;
+  drawContent({ data: { rows: articles.slice(loadIndex, loadIndex + (MAX_ELEMENTS * MAX_ROW)) } });
+  loadIndex += MAX_ELEMENTS * MAX_ROW;
+  if(loadIndex > articles.length) document.getElementById("load-more").textContent = "No more items";
+}

@@ -50,3 +50,38 @@ html, body {
   color: #ffffff;
   padding: 0 8px;
 }
+.loader {
+  display: block;
+  position: relative;
+  text-align: center;
+  padding: 8px;
+}
+.loader button {
+  padding: 10px;
+  border: 0;
+  border-radius: 0;
+  background: #3f51b5;
+  color: #ffffff;
+  font-size: 16px;
+}
+.header {
+  margin: 0;
+  padding: 8px 16px;
+  background: rgba(0, 0, 0, 1);
+  color: #ffffff;
+  width: 100%;
+}
+.header a {
+  color: #ffffff;
+  text-decoration: none;
+}
+.header ul {
+  display: block;
+  list-style-type: none;
+  padding: 0;
+}
+.header ul li {
+  list-style: none;
+  display: inline-block;
+  margin-right: 4px;
+}

@@ -1,12 +1,13 @@
-<html lang="en">
+<!DOCTYPE html>
+<html>
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <title>FrontEnd Task</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="css/style.css" type="text/css" />
 </head>
-<body onload="fetchData(URL, FETCH_OPTIONS, drawContent)">
+<body onload="fetchData(URL, FETCH_OPTIONS, loadPartial)">
   <div class="header">
     <ul>
       <li><a href="index.html">Home page</a></li>
@@ -14,6 +15,9 @@
     </ul>
   </div>
   <div class="container" id="main-container">
+  </div>
+  <div class="loader">
+    <button id="load-more" onclick="loadPartial()">Load More</button>
   </div>
   <script type="text/javascript" src="js/common.js"></script>
   <script type="text/javascript" src="js/main.js"></script>

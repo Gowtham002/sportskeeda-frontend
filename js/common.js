@@ -1,3 +1,8 @@
+const MAX_ELEMENTS = 3;
+const MAX_ROW = 2;
+const GRID_CLASSES = ["col-1", "col-1", "col-2"];
+const CONTAINER_ID = "main-container";
+
 const fetchData = (url, options, callback) => {
   fetch(url, options)
   .then(function(response) {
