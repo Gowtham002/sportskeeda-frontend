@@ -12,8 +12,8 @@ A simple js app to show articles from a json endpoint. It has the following page
 Install the dependencies and devDependencies and start the server.
 
 ```sh
-$ git clone https://github.com/Gowtham002/players_frontend.git
-$ cd players_frontend
+$ git clone https://github.com/Gowtham002/sportskeeda-frontend.git
+$ cd sportskeeda-frontend
 ```
 
 open index.html
